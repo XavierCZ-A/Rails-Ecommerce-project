@@ -1,0 +1,51 @@
+<%# TODO: Falta agregar traducciones aquí %>
+<article id="<%= dom_id product %>" class="p-6">
+  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg">
+    <div>
+      <% if product.images.attached? %>
+        <% product.images.each do |image| %>
+          <figure>
+            <%= image_tag image, class: 'rounded-t-lg w-full h-64' if image %>
+          </figure>
+        <% end %>
+      <% else %>
+        <p>No images attached.</p>
+      <% end %>
+    </div>
+    <section class="p-5">
+      <header class="mb-3">
+        <h2 class="font-bold text-black"><%= product.title %></h2>
+      </header>
+      <div class="flex flex-wrap mb-3">
+        <div class="w-full pr-4 mb-2">
+          <p class="text-black"><%= product.description %></p>
+        </div>
+        <div class="w-1/2 pr-4">
+          <strong class="font-bold text-black">Price:</strong>
+          <p class="text-black"><%= number_to_currency(product.price) %></p>
+        </div>
+      </div>
+      <div class="flex justify-between mt-8 space-x-4">
+        <%= link_to "Create Stock", new_stock_path(product_id: product.id), class: "w-48 rounded-lg py-3 px-5 bg-blue-400 inline-block font-medium text-white hover:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600" %>
+        <%= link_to "Edit this product", edit_product_path(product), class: "w-48 rounded-lg py-3 px-5 bg-blue-400 inline-block font-medium text-white hover:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600" %>
+      </div>
+    </section>
+  </div>
+</article>
+
+
+<%#= product.title %>
+<%#= product.description %>
+<%#= product.price %>
+<%#= product.category.name %>
+<!--<div>-->
+  <%# if product.images.attached? %>
+    <%# product.images.each do |image| %>
+<!--      <figure>-->
+        <%#= image_tag image, class: 'rounded-t-lg w-full h-64' if image %>
+<!--      </figure>-->
+    <%# end %>
+  <%# else %>
+<!--    <p>No images attached.</p>-->
+  <%# end %>
+<!--</div>-->

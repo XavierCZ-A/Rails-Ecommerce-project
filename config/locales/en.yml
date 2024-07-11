@@ -1,0 +1,62 @@
+en:
+  app_name: 'Ecommerce'
+  meta_title: 'Ecommerce - The best place for your shopping'
+  header_admin:
+    dashboard: 'Dashboard'
+    categories: 'Categories'
+    products: 'Products'
+    orders: 'Orders'
+    inventory: 'inventory'
+  forms:
+    products:
+      title: 'Title'
+      description: 'Description'
+      price: 'Price'
+      category: 'Category'
+      images: 'Images'
+    stocks:
+      products: 'Select product'
+      quantity: 'Quantity'
+  activerecord:
+    enums:
+      payment_request:
+        type_request:
+          payment_to_supplier: 'Payment to supplier'
+          account_advance: 'Account'
+    errors:
+      models:
+        product:
+          save_error: 'Product could not be saved due to validation errors'
+          attributes:
+            category:
+              required: 'You must select a category'
+            title:
+              blank: 'Can not be blank'
+            description:
+              blank: 'Can not be blank'
+            price:
+              blank: 'Can not be blank'
+            stock:
+              blank: 'Can not be blank'
+            category_id:
+              blank: 'Can not be blank'
+        stock:
+          save_error: 'Could not save stock due to validation errors:'
+          attributes:
+            product:
+              required: 'You must select a product'
+            quantity:
+              greater_than: 'must be greater than 0'
+  views:
+    product:
+      products: 'Products'
+      new_product: 'New Product'
+      title: 'Title'
+      category: 'Category'
+      price: 'Price'
+    stock:
+      stocks: 'Stocks'
+      quantity: 'Quantity'
+      product: 'Product'
+
+

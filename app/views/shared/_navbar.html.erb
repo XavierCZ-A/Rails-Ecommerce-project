@@ -1,0 +1,22 @@
+<nav class="bg-white border border-gray-200 shadow-sm">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <%= link_to products_path, class: "text-2xl font-bold text-sky-900" do %>
+      Merin
+    <% end %>
+
+    <button data-action="click->menu#toggle" class="sm:hidden">
+      <%= icon('fa-solid', 'list') %>
+    </button>
+
+    <div class="hidden sm:flex space-x-4">
+      <%= render partial: 'shared/items' %>
+    </div>
+
+    <div data-menu-target="items" class="sm:hidden fixed top-0 right-0 w-3/5 bg-white shadow z-10 h-full flex flex-col transform translate-x-full transition duration-200 ease-in-out">
+      <button data-action="click->menu#toggle">
+        <%= icon('fa-solid', 'x') %>
+      </button>
+      <%= render partial: 'shared/items' %>
+    </div>
+  </div>
+</nav>

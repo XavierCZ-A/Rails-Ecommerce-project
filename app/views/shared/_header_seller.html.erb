@@ -1,0 +1,49 @@
+<nav class="w-64 p-4 h-screen bg-white sticky top-0 border border-gray-200 shadow-lg">
+  <div class="flex">
+    <%# <%= image_tag 'logo.png', class: "w-16" %>
+    <h1 class="text-2xl py-2 text-black font-bold hidden md:block">Ecomm Admin</h1>
+  </div>
+  <ul>
+    <li>
+      <!-- Dropdown Menu -->
+      <div data-controller="dropdown">
+        <button type="button" class="w-full text-left block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" data-action="click->dropdown#toggle">
+          <%= icon('fa-solid', 'shirt', class: 'mr-2') %>
+          <span class="hidden md:inline-block"><%= t('header_admin.products') %></span>
+          <%= icon('fa-solid', 'caret-down', class: 'ms-8') %>
+        </button>
+        <div data-dropdown-target="menu" class="hidden">
+          <%= render partial: 'shared/dropdown_menu' %>
+        </div>
+      </div>
+    </li>
+    <li>
+      <%= link_to seller_path, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
+        <%= icon('fa-solid', 'gauge-high', class: 'mr-2') %> <span class="hidden md:inline-block"><%= t('header_admin.dashboard') %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to products_path, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
+        <%= icon('fa-solid', 'money-bills', class: 'mr-2 ') %> <span class="hidden md:inline-block"><%= t('header_admin.products') %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to products_path, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
+        <%= icon('fa-solid', 'list', class: 'mr-2 ') %> <span class="hidden md:inline-block"><%= t('header_admin.categories') %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
+        <%= icon('fa-solid', 'truck-fast', class: 'mr-2 ') %> <span class="hidden md:inline-block"><%= t('header_admin.orders') %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to destroy_user_session_path, data: { "turbo-method": :delete, "turbo-confirm": "Are you sure you want to sign out?" }, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
+        <%= icon('fa-solid', 'sign-out', class: 'mr-2 ') %> <span class="hidden md:inline-block">Sign out</span>
+      <% end %>
+    </li>
+  </ul>
+
+</nav>
+
+

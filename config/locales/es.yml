@@ -1,0 +1,65 @@
+es:
+  app_name: 'Tienda online'
+  meta_title: 'Tienda online - El mejor lugar para la gestion de tus compras'
+  header_admin:
+    dashboard: 'Tablero'
+    categories: 'Categorías'
+    products: 'Productos'
+    orders: 'Pedidos'
+    inventory: 'inventario'
+  forms:
+    products:
+      title: 'Titulo'
+      description: 'Descripcion'
+      price: 'Precio'
+      stock: 'Cantidad'
+      category: 'Categoria'
+      images: 'Imagenes'
+    stocks:
+      products: 'Selecciona el producto'
+      quantity: 'Cantidad'
+  activerecord:
+    enums:
+      payment_request:
+        type_request:
+          payment_to_supplier: 'Pago a proveedor'
+          account_advance: 'Adelanto de cuenta'
+    errors:
+      models:
+        product:
+          save_error: 'No se pudo guardar el producto debido a errores de validación:'
+          attributes:
+            category:
+              required: 'Debes seleccionar una categoria'
+            title:
+              blank: 'No puede estar en blanco'
+            description:
+              blank: 'No puede estar en blanco'
+            price:
+              blank: 'No puede estar en blanco'
+              not_a_number: 'Tiene que ser un numero'
+            stock:
+              blank: 'No puede estar en blanco'
+            category_id:
+              blank: 'No puede estar en blanco'
+        stock:
+          save_error: 'No se pudo guardar el stock debido a errores de validación:'
+          attributes:
+            product:
+              required: 'Debes seleccionar un producto'
+            quantity:
+              greater_than: 'Debe ser mayor a 0'
+              not_a_number: 'Debe ser un numero'
+  views:
+    product:
+      products: 'Productos'
+      new_product: 'Crear producto'
+      title: 'Titulo'
+      category: 'Categoria'
+      price: 'Precio'
+    stock:
+      stocks: 'Conteo'
+      quantity: 'Cantidad'
+      product: 'Producto'
+
+

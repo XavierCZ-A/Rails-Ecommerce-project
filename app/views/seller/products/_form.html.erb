@@ -1,0 +1,62 @@
+<div class="max-w-3xl bg-white shadow-md rounded-lg border px-8 pt-6 pb-8 mb-4">
+  <% if product.errors.any? %>
+    <div id="error_explanation" class="bg-red-100 text-red-700 px-3 py-2 font-medium rounded-lg mt-3 border border-red-400">
+      <h2 class="text-red-800"><%= t('activerecord.errors.models.product.save_error') %></h2>
+      <ul class="mt-2">
+        <% product.errors.each do |error| %>
+          <li class="mb-1"><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_with(model: product, class: "contents") do |form| %>
+
+    <div class="my-5">
+      <%= form.label :title do  %>
+        <%= t('forms.title') %><span class="text-red-500">*</span>
+      <% end %>
+      <%= form.text_field :title, class: "block appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none focus:ring-0 focus:border-transparent" %>
+      <div class="border-b border-gray-300 mt-1"></div>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :description do %>
+        <%= t('forms.description') %><span class="text-red-500">*</span>
+      <% end %>
+      <%= form.text_area :description, rows: 4, class: "block appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none focus:ring-0 focus:ring-blue-500 focus:border-transparent" %>
+      <div class="border-b border-gray-300 mt-1"></div>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :price do %>
+        <%= t('forms.price') %><span class="text-red-500">*</span>
+      <% end %>
+      <%= form.text_field :price, class: "block appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none focus:ring-0 focus:ring-blue-500 focus:border-transparent" %>
+      <div class="border-b border-gray-300 mt-1"></div>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :category_id do %>
+        <%= t('forms.category') %><span class="text-red-500">*</span>
+      <% end %>
+      <%= form.collection_select :category_id, Category.all, :id, :name, {}, { class: "block appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none focus:ring-0 focus:ring-blue-500 focus:border-transparent" } %>
+      <div class="border-b border-gray-300 mt-1"></div>
+    </div>
+
+    <div class="my-5" data-controller="image-preview">
+      <%= form.label :images, class: "block text-sm font-medium text-gray-700" do %>
+        <%= t('forms.images') %><span class="text-red-500">*</span>
+      <% end %>
+      <%= form.file_field :images, multiple: true, class: "block w-full text-sm text-gray-500 border border-gray-300 rounded-md cursor-pointer focus:outline-none mt-2", data: { action: "image-preview#showPreview", image_preview_target: "input" } %>
+      <div id="image-preview" class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4" data-image-preview-target="preview"></div>
+    </div>
+
+    <div class="my-5">
+      <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer hover:bg-blue-700 focus:outline-none focus:ring-0 focus:ring-blue-500 focus:ring-offset-2" %>
+      <%= link_to "Back to products", products_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    </div>
+
+  <% end %>
+
+</div>

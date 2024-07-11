@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+
+  <%#= link_to 'Add product', root_path, class: "mx-2 text-red-500 font-bold", data: { turbo_frame: 'modal' } %>
+  <%#= link_to 'Favorites', root_path, class: "mx-2 text-red-500 font-bold" %>
+  <%#= link_to 'Categories', root_path, class: "mx-2 text-red-500 font-bold" %>
+  <%#= link_to 'Login', root_path, class: "mx-2 text-sky-900 font-bold" %>
+  <button class="mx-2 text-sky-900 font-bold">
+    <%= icon('fa-regular', 'bell') %>
+  </button>
+  <button class="mx-2 text-sky-900 font-bold">
+    <%= icon('fa-regular', 'moon') %>
+  </button>
+  <%= image_tag "https://via.placeholder.com/40", alt: "Profile Image", class: "rounded-full h-10 w-10 mx-2" %>
+
+
+<% end %>

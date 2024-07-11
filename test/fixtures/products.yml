@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+laptop:
+  title: Laptop Hp
+  description: Procesador i7, 8GB RAM, 1TB HDD
+  price: 1000
+  category: electronic
+
+iphone:
+  title: Iphone 14 pro max
+  description: Iphone 16GB RAM, 1TB
+  price: 2000
+  category: electronic

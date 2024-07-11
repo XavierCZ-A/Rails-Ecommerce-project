@@ -1,0 +1,12 @@
+<!-- _dropdown_menu.html.erb -->
+<div class="py-1">
+  <%= link_to products_path, class: 'text-gray-700 block px-4 py-2 text-sm hover:rounded hover:bg-gray-200', role: 'menuitem', tabindex: '-1', id: 'menu-item-0' do %>
+    <span>Inventory</span>
+  <% end %>
+  <%= link_to new_product_path, class: 'text-gray-700 block px-4 py-2 text-sm hover:rounded hover:bg-gray-200', role: 'menuitem', tabindex: '-1', id: 'menu-item-0' do %>
+    <span>Create product</span>
+  <% end %>
+  <%= link_to stocks_path, class: 'text-gray-700 block px-4 py-2 text-sm hover:rounded hover:bg-gray-200', role: 'menuitem', tabindex: '-1', id: 'menu-item-0' do %>
+    <span>Stocks</span>
+  <% end %>
+</div>
