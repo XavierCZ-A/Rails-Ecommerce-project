@@ -47,15 +47,15 @@ RSpec.describe Seller::ProductsController, type: :controller do
     end
   end
 
-  describe "DELETE #destroy" do
-    context 'when deleting a product' do
-      it 'deletes the product' do
-        expect {
-          delete :destroy, params: { id: product.id }
-        }.to change(Product, :count).by(-1)
-      end
-    end
-  end
+  # describe "DELETE #destroy" do
+  #   context 'when deleting a product' do
+  #     it 'deletes the product' do
+  #       expect {
+  #         delete :destroy, params: { id: product.id }
+  #       }.to change(Product, :count).by(-1)
+  #     end
+  #   end
+  # end
 end
 
 

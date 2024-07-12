@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
 
   postgres-db:
@@ -10,7 +9,22 @@ services:
       POSTGRES_DB: ${DATABASE_NAME}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
     volumes:
-      - ./postgres:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
     ports:
       - 5433:5432
 
+  postgres-db-test:
+    image: postgres:16.3
+    restart: always
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME_TEST}
+      POSTGRES_DB: ${DATABASE_NAME_TEST}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD_TEST}
+    volumes:
+      - postgres-test-data:/var/lib/postgresql/data
+    ports:
+      - 5434:5432
+
+volumes:
+  postgres-data:
+  postgres-test-data:
