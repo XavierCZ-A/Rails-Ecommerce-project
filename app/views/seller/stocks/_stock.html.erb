@@ -8,22 +8,10 @@
   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black">
     <%= stock.product.title %>
   </th>
-  <td class="px-6 py-4 text-black">
+  <td class="px-10 py-4 text-black">
     <%= stock.quantity %>
   </td>
   <td class="px-6 py-4 text-black">
-    <%= link_to "View", product_path(stock.product), class: "w-48 rounded-lg py-3 px-5 bg-blue-400 inline-block font-medium text-white hover:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600" %>
+    <%= link_to "View", product_path(stock.product), class: "rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
   </td>
 </tr>
-
-<!--<div id="<%#= dom_id stock %>">-->
-<!--  <p class="my-5">-->
-<!--    <strong class="block font-medium mb-1">Quantity:</strong>-->
-    <%#= stock.product.title %>
-<!--  </p>-->
-<!--  <p class="my-5">-->
-<!--    <strong class="block font-medium mb-1">Quantity:</strong>-->
-    <%#= stock.quantity %>
-<!--  </p>-->
-
-<!--</div>-->

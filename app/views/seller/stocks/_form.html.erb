@@ -1,4 +1,4 @@
-<div class="max-w-3xl bg-white shadow-md rounded-lg border px-8 pt-6 pb-8 mb-4">
+<div class="max-w-2xl bg-white shadow-md rounded-lg border px-8 pt-6 pb-8 mb-4">
   <%= form_with(model: stock, class: "contents") do |form| %>
 
     <% if stock.errors.any? %>
@@ -12,28 +12,24 @@
         </ul>
       </div>
     <% end %>
-    <div class="my-5">
-      <%= form.label :quantity do  %>
-        <%= t('forms.stocks.quantity') %><span class="text-red-500">*</span>
-      <% end %>
-      <%= form.number_field :quantity, class: "block appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none focus:ring-0 focus:border-transparent" %>
-      <div class="border-b border-gray-300 mt-1"></div>
+
+    <div class="relative z-0 w-full my-5 group">
+      <%= form.text_field :quantity, id: 'floating_quantity', class: "block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer", placeholder: " " %>
+      <%= form.label :quantity, t('forms.stocks.quantity'), for: 'floating_title', class: "peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
     </div>
 
     <% if stock.product_id.nil? %>
-      <div class="my-5">
-        <%= form.label :product_id do %>
-          <%= t('forms.stocks.products') %><span class="text-red-500">*</span>
-        <% end %>
-        <%= form.collection_select :product_id, Product.all, :id, :title, {}, { class: "block appearance-none bg-transparent border-none w-full text-gray-700 py-1 px-2 leading-tight focus:outline-none focus:ring-0 focus:ring-blue-500 focus:border-transparent" } %>
-        <div class="border-b border-gray-300 mt-1"></div>
+      <div class="relative z-0 w-full my-10 group">
+        <%= form.collection_select :category_id, Product.all, :id, :title, { prompt: " " }, { id: 'floating_category_id', class: "block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" } %>
+        <%= form.label :category_id, t('forms.stocks.products'), for: 'floating_category_id', class: "peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" %>
       </div>
     <% else %>
       <%= form.hidden_field :product_id %>
     <% end %>
 
     <div class="inline">
-      <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+      <%= form.submit class: "rounded-lg py-3 px-5 bg-indigo-500 text-white inline-block font-medium cursor-pointer hover:bg-indigo-700 focus:outline-none focus:ring-0 focus:ring-blue-500 focus:ring-offset-2" %>
+      <%= link_to "Back to stocks", stocks_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     </div>
   <% end %>
 
