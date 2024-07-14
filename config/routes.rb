@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'pages#home'
   devise_for :users
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   namespace :seller, path: '', as: '' do
     resources :products
     resources :stocks
+    resources :orders
   end
 
   get "up" => "rails/health#show", as: :rails_health_check
