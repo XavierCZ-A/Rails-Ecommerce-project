@@ -18,6 +18,14 @@ es:
     stocks:
       products: 'Selecciona el producto'
       quantity: 'Cantidad'
+    orders:
+      customer_email: 'Correo'
+      customer_name: 'Nombre'
+      customer_phone: 'Telefono'
+      product_quantity: 'Cantidad de productos'
+      total_price: 'Total'
+      shipping_address: 'Direccion'
+
   activerecord:
     enums:
       payment_request:
@@ -61,5 +69,14 @@ es:
       stocks: 'Conteo'
       quantity: 'Cantidad'
       product: 'Producto'
+    orders:
+      orders: 'Ordenes'
+      customer_email: 'Correo'
+      customer_name: 'Nombre'
+      customer_phone: 'Telefono'
+      product_quantity: 'Cantidad de productos'
+      total_price: 'Total'
+      shipping_address: 'Direccion'
+      status: "Estatus"
 
 

@@ -1,21 +1,49 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
+<%# TODO: Falta agregar traducciones aquí %>
+<div class="w-full px-5 py-5">
   <% content_for :title, "Orders" %>
-
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Orders</h1>
-    <%= link_to "New order", new_order_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl"><%= t('views.orders.orders') %></h1>
   </div>
 
-  <div id="orders" class="min-w-full">
-    <% @orders.each do |order| %>
-      <%= render order %>
-      <p>
-        <%= link_to "Show this order", order, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
-    <% end %>
+  <div class="mt-3 relative overflow-x-auto shadow-md sm:rounded-lgg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase dark:text-gray-400 border">
+      <tr>
+        <th scope="col" class="p-4">
+          <div class="flex items-center">
+            <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:border-gray-600">
+            <label for="checkbox-all-search" class="sr-only">checkbox</label>
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <%= t('views.orders.customer_email') %>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <%=t('views.orders.customer_name') %>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <%= t('views.orders.customer_phone') %>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <%= t('views.orders.product_quantity') %>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <%= t('views.orders.total_price') %>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <%= t('views.orders.shipping_address') %>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <%= t('views.orders.status') %>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @orders.each do |order| %>
+        <%= render partial: 'order', locals: { order: order } %>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
+

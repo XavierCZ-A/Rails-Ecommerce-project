@@ -19,21 +19,11 @@
     </li>
     <li>
       <%= link_to seller_path, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
-        <%= icon('fa-solid', 'gauge-high', class: 'mr-2') %> <span class="hidden md:inline-block"><%= t('header_admin.dashboard') %></span>
+        <%= icon('fa-solid', 'table-columns', class: 'mr-2') %> <span class="hidden md:inline-block"><%= t('header_admin.dashboard') %></span>
       <% end %>
     </li>
     <li>
-      <%= link_to products_path, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
-        <%= icon('fa-solid', 'money-bills', class: 'mr-2 ') %> <span class="hidden md:inline-block"><%= t('header_admin.products') %></span>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to products_path, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
-        <%= icon('fa-solid', 'list', class: 'mr-2 ') %> <span class="hidden md:inline-block"><%= t('header_admin.categories') %></span>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to root_path, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
+      <%= link_to orders_path, class: "block px-4 py-2 text-gray-500 hover:rounded hover:bg-gray-200 text-sm" do %>
         <%= icon('fa-solid', 'truck-fast', class: 'mr-2 ') %> <span class="hidden md:inline-block"><%= t('header_admin.orders') %></span>
       <% end %>
     </li>

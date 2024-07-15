@@ -17,6 +17,13 @@ en:
     stocks:
       products: 'Select product'
       quantity: 'Quantity'
+    orders:
+      customer_email: 'Email'
+      customer_name: 'Name'
+      customer_phone: 'Phone'
+      product_quantity: 'Product Quantity'
+      total_price: 'Total'
+      shipping_address: 'Address'
   activerecord:
     enums:
       payment_request:
@@ -58,5 +65,15 @@ en:
       stocks: 'Stocks'
       quantity: 'Quantity'
       product: 'Product'
+    orders:
+      orders: 'Orders'
+      customer_email: 'Email'
+      customer_name: 'Name'
+      customer_phone: 'Phone'
+      product_quantity: 'Product Quantity'
+      total_price: 'Total'
+      shipping_address: 'Address'
+      status: "Status"
+
 
 
