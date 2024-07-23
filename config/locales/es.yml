@@ -5,7 +5,7 @@ es:
     dashboard: 'Tablero'
     categories: 'Categorías'
     products: 'Productos'
-    orders: 'Pedidos'
+    orders: 'Ordenes'
     inventory: 'inventario'
   forms:
     products:
@@ -25,7 +25,14 @@ es:
       product_quantity: 'Cantidad de productos'
       total_price: 'Total'
       shipping_address: 'Direccion'
-
+    users:
+      email: 'Correo'
+      password: 'Contraseña'
+      password_confirmation: 'Confirmar contraseña'
+      username: 'Nombre de usuario'
+      full_name: 'Nombre completo'
+      password_characters: 'Caracteres minimo'
+      already_have_an_account: 'Ya tienes una cuenta'
   activerecord:
     enums:
       payment_request:

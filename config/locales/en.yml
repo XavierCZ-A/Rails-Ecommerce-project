@@ -24,6 +24,15 @@ en:
       product_quantity: 'Product Quantity'
       total_price: 'Total'
       shipping_address: 'Address'
+    users:
+      email: 'Email'
+      password: 'Password'
+      password_confirmation: 'Password confirmation'
+      username: 'Username'
+      full_name: 'Full name'
+      password_characters: 'Characters minimum'
+      already_have_an_account: 'Already have an account'
+
   activerecord:
     enums:
       payment_request:

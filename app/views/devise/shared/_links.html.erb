@@ -11,7 +11,7 @@
   </div>
 
   <%- if controller_name != 'sessions' %>
-    <span class="text-sm font-medium text-black mr-2">Already have an account?</span><%= link_to "Sign in here", new_session_path(resource_name), class: "text-sm font-medium text-indigo-600 hover:text-indigo-500 hover:underline" %>
+    <span class="text-sm font-medium text-black mr-2"><%= t('forms.users.already_have_an_account') %>?</span><%= link_to "Sign in here", new_session_path(resource_name), class: "text-sm font-medium text-indigo-600 hover:text-indigo-500 hover:underline" %>
   <% end %>
 
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
