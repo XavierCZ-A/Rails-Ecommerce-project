@@ -7,3 +7,9 @@
 xavier:
   email: xavier@gmail.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  full_name: xavier Caballero Zanabria
+
+test_user:
+  email: test@example.com
+  encrypted_password: $2a$12$AbCdEfGh12345
+  full_name: test

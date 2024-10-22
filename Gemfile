@@ -82,3 +82,5 @@ gem "devise", "~> 4.9"
 gem "pundit", "~> 2.3"
 
 gem "view_component", "~> 3.12"
+
+gem 'pagy', '~> 9.1'

@@ -1,10 +1,24 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-electronic:
-  name: Videogames
+electronics:
+  name: Electronics
   description: Play
 
+books:
+  name: Books
+  description: man and women
+
 clothing:
-    name: Ropa
-    description: man and women
+  name: Clothing
+  description: man and women
+
+home:
+  name: Home
+  description: Play
+
+toys:
+  name: Toys
+  description: man and women
+
+
 

@@ -3,28 +3,29 @@ class Seller::ProductsController < SellerController
 
   # GET /seller/products or /seller/products.json
   def index
-    @products = current_user.products
+    # @pagy, @products = pagy(current_user.products)
+    @pagy, @products = pagy(FindProductsSellers.new(current_user).call_params(products_params_index))
 
-    if params[:category_id]
-      @products = @products.where(category_id: params[:category_id])
-    end
-
-    if params[:min_price].present?
-      @products = @products.where("price >= ?", params[:min_price])
-    end
-
-    if params[:max_price].present?
-      @products = @products.where("price <= ?", params[:max_price])
-    end
-
-    if params[:query_text].present?
-      @products = @products.search_full_text(params[:query_text])
-    end
-
-    orders = Product::ORDER_BY.fetch(params[:order_by]&.to_sym, Product::ORDER_BY[:newest])
-
-    # We check if the parameter exists with &
-    @products = @products.order(orders)
+    # if params[:category_id]
+    #   @products = @products.where(category_id: params[:category_id])
+    # end
+    #
+    # if params[:min_price].present?
+    #   @products = @products.where("price >= ?", params[:min_price])
+    # end
+    #
+    # if params[:max_price].present?
+    #   @products = @products.where("price <= ?", params[:max_price])
+    # end
+    #
+    # if params[:query_text].present?
+    #   @products = @products.search_full_text(params[:query_text])
+    # end
+    #
+    # # We check if the parameter exists with &
+    # orders = Product::ORDER_BY.fetch(params[:order_by]&.to_sym, Product::ORDER_BY[:newest])
+    #
+    # @products = @products.order(orders)
   end
 
   # GET /seller/products/1 or /seller/products/1.json
@@ -82,5 +83,9 @@ class Seller::ProductsController < SellerController
   # Only allow a list of trusted parameters through.
   def product_params
     params.require(:product).permit(:title, :description, :price, :category_id, images: [])
+  end
+
+  def products_params_index
+    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by)
   end
 end

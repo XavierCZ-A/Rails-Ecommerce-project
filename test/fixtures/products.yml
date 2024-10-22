@@ -1,13 +1,308 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-laptop:
-  title: Laptop Hp
-  description: Procesador i7, 8GB RAM, 1TB HDD
-  price: 1000
-  category: electronic
+# electronics
+laptop_hp:
+  title: Laptop HP
+  description: Procesador i7, 16GB RAM, 512GB SSD
+  price: 1200
+  category: electronics
+  user: xavier
 
-iphone:
-  title: Iphone 14 pro max
-  description: Iphone 16GB RAM, 1TB
-  price: 2000
-  category: electronic
+macbook_air:
+  title: MacBook Air
+  description: M1 chip, 8GB RAM, 256GB SSD
+  price: 1400
+  category: electronics
+  user: test_user
+
+samsung_tv:
+  title: Samsung 4K TV
+  description: Smart TV, 55 pulgadas, UHD
+  price: 800
+  category: electronics
+  user: xavier
+
+sony_headphones:
+  title: Sony Wireless Headphones
+  description: Cancelación de ruido, Bluetooth 5.0
+  price: 250
+  category: electronics
+  user: test_user
+
+dell_monitor:
+  title: Dell UltraSharp Monitor
+  description: 27 pulgadas, 4K, UltraSharp Display
+  price: 400
+  category: electronics
+  user: xavier
+
+logitech_keyboard:
+  title: Logitech Wireless Keyboard
+  description: Teclado inalámbrico, Bluetooth, Recargable
+  price: 80
+  category: electronics
+  user: test_user
+
+canon_camera:
+  title: Canon DSLR Camera
+  description: Cámara DSLR, 24.1MP, Lente 18-55mm
+  price: 550
+  category: electronics
+  user: xavier
+
+apple_watch:
+  title: Apple Watch Series 7
+  description: 44mm, GPS, Resistente al agua
+  price: 450
+  category: electronics
+  user: test_user
+
+bose_speakers:
+  title: Bose SoundLink Speakers
+  description: Altavoces Bluetooth, Sonido estéreo
+  price: 300
+  category: electronics
+  user: xavier
+
+xbox_console:
+  title: Xbox Series X
+  description: Consola de videojuegos 1TB, 8K
+  price: 500
+  category: electronics
+  user: test_user
+
+# books
+harry_potter:
+  title: Harry Potter and the Philosopher's Stone
+  description: Primer libro de la serie Harry Potter
+  price: 15
+  category: books
+  user: xavier
+
+game_of_thrones:
+  title: Game of Thrones
+  description: Primera novela de la saga Canción de Hielo y Fuego
+  price: 20
+  category: books
+  user: test_user
+
+hobbit:
+  title: The Hobbit
+  description: Historia de Bilbo Baggins, una precuela del Señor de los Anillos
+  price: 18
+  category: books
+  user: xavier
+
+sapiens:
+  title:
+    Sapiens: A Brief History of Humankind
+  description: Un relato de la evolución humana por Yuval Noah Harari
+  price: 25
+  category: books
+  user: test_user
+
+catch_22:
+  title: Catch-22
+  description: Novela de la Segunda Guerra Mundial por Joseph Heller
+  price: 12
+  category: books
+  user: xavier
+
+to_kill_a_mockingbird:
+  title: To Kill a Mockingbird
+  description: Historia de racismo e injusticia en los Estados Unidos
+  price: 10
+  category: books
+  user: test_user
+
+lord_of_the_rings:
+  title: The Lord of the Rings
+  description: Trilogía de fantasía épica por J.R.R. Tolkien
+  price: 50
+  category: books
+  user: xavier
+
+fifty_shades:
+  title: Fifty Shades of Grey
+  description: Novela romántica por E.L. James
+  price: 15
+  category: books
+  user: test_user
+
+dune:
+  title: Dune
+  description: Novela de ciencia ficción por Frank Herbert
+  price: 18
+  category: books
+  user: xavier
+
+pride_and_prejudice:
+  title: Pride and Prejudice
+  description: Novela clásica por Jane Austen
+  price: 10
+  category: books
+  user: test_user
+
+# clothing
+nike_shoes:
+  title: Nike Air Max 90
+  description: Zapatillas deportivas, Edición clásica
+  price: 120
+  category: clothing
+  user: xavier
+
+adidas_jacket:
+  title: Adidas Originals Jacket
+  description: Chaqueta deportiva, Resistente al viento
+  price: 85
+  category: clothing
+  user: test_user
+
+levis_jeans:
+  title: Levi's 501 Original Jeans
+  description: Jeans clásicos, Corte recto, Azul oscuro
+  price: 60
+  category: clothing
+  user: xavier
+
+zara_dress:
+  title: Zara Summer Dress
+  description: Vestido de verano, 100% algodón
+  price: 50
+  category: clothing
+  user: test_user
+
+under_armour_shirt:
+  title: Under Armour Compression Shirt
+  description: Camiseta compresiva para entrenamiento
+  price: 40
+  category: clothing
+  user: xavier
+
+ralph_lauren_polo:
+  title: Ralph Lauren Polo Shirt
+  description: Polo clásica, Algodón piqué
+  price: 75
+  category: clothing
+  user: test_user
+
+north_face_jacket:
+  title: The North Face Puffer Jacket
+  description: Chaqueta de invierno, Relleno de plumas
+  price: 180
+  category: clothing
+  user: xavier
+
+ray_ban_sunglasses:
+  title: Ray-Ban Aviator Sunglasses
+  description: Gafas de sol estilo aviador
+  price: 150
+  category: clothing
+  user: test_user
+
+reebok_sneakers:
+  title: Reebok Classic Sneakers
+  description: Zapatillas retro, Color blanco
+  price: 90
+  category: clothing
+  user: xavier
+
+puma_cap:
+  title: Puma Snapback Cap
+  description: Gorra deportiva ajustable
+  price: 30
+  category: clothing
+  user: test_user
+
+# home
+dyson_vacuum:
+  title: Dyson V11 Vacuum Cleaner
+  description: Aspiradora inalámbrica, Potencia máxima
+  price: 600
+  category: home
+  user: xavier
+
+instant_pot:
+  title: Instant Pot 7-in-1 Pressure Cooker
+  description: Olla a presión multifuncional, 6 cuartos
+  price: 100
+  category: home
+  user: test_user
+
+keurig_coffee_maker:
+  title: Keurig K-Classic Coffee Maker
+  description: Cafetera de cápsulas, 12 onzas
+  price: 90
+  category: home
+  user: xavier
+
+ikea_sofa:
+  title: IKEA Sofa Bed
+  description: Sofá cama, Tapizado de lino gris
+  price: 400
+  category: home
+  user: test_user
+
+philips_air_fryer:
+  title: Philips Air Fryer
+  description: Freidora de aire, Tecnología Rapid Air
+  price: 150
+  category: home
+  user: xavier
+
+dyson_air_purifier:
+  title: Dyson Air Purifier
+  description: Purificador de aire, Control inteligente
+  price: 350
+  category: home
+  user: test_user
+
+bose_home_speaker:
+  title: Bose home Speaker 500
+  description: Altavoz inteligente con Alexa integrada
+  price: 250
+  category: home
+  user: xavier
+
+samsung_refrigerator:
+  title: Samsung Smart Refrigerator
+  description: Refrigerador inteligente, Pantalla táctil
+  price: 1200
+  category: home
+  user: test_user
+
+whirlpool_washer:
+  title: Whirlpool Washing Machine
+  description: Lavadora de carga frontal, 8kg
+  price: 700
+  category: home
+  user: xavier
+
+kitchenaid_mixer:
+  title: KitchenAid Stand Mixer
+  description: Batidora de pie, Color rojo
+  price: 350
+  category: home
+  user: test_user
+
+# toys
+lego_star_wars:
+  title: LEGO Star Wars Millennium Falcon
+  description: Set de construcción de 1,500 piezas
+  price: 150
+  category: toys
+  user: xavier
+
+barbie_dreamhouse:
+  title: Barbie Dreamhouse
+  description: Casa de muñecas de lujo de 3 pisos
+  price: 250
+  category: toys
+  user: test_user
+
+hot_wheels_track:
+  title: Hot Wheels Ultimate Track Set
+  description: Pista de carreras con loops y lanzadores
+  price: 100
+  category: toys
+  user: xavier
