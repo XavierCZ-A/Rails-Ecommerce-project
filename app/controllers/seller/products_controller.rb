@@ -3,7 +3,28 @@ class Seller::ProductsController < SellerController
 
   # GET /seller/products or /seller/products.json
   def index
-    @products = Product.all
+    @products = current_user.products
+
+    if params[:category_id]
+      @products = @products.where(category_id: params[:category_id])
+    end
+
+    if params[:min_price].present?
+      @products = @products.where("price >= ?", params[:min_price])
+    end
+
+    if params[:max_price].present?
+      @products = @products.where("price <= ?", params[:max_price])
+    end
+
+    if params[:query_text].present?
+      @products = @products.search_full_text(params[:query_text])
+    end
+
+    orders = Product::ORDER_BY.fetch(params[:order_by]&.to_sym, Product::ORDER_BY[:newest])
+
+    # We check if the parameter exists with &
+    @products = @products.order(orders)
   end
 
   # GET /seller/products/1 or /seller/products/1.json
@@ -21,7 +42,8 @@ class Seller::ProductsController < SellerController
 
   # POST /seller/products or /seller/products.json
   def create
-    @product = Product.new(product_params)
+    # @product = Product.new(product_params)
+    @product = current_user.products.new(product_params)
     if @product.save
       redirect_to product_url(@product), notice: "Product was successfully created."
     else

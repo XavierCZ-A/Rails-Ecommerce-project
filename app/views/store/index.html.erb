@@ -1,0 +1,70 @@
+<!--  <div class="grid grid-cols-5 grid-rows-5 gap-4">-->
+<!--    <div class="col-span-5 row-span-3">-->
+<%# if product.images.attached? %>
+<%# product.images.each do |image| %>
+<!--          <figure>-->
+<%#= image_tag image, class: 'rounded-t-lg w-full h-64' if image %>
+<!--          </figure>-->
+<%# end %>
+<%# else %>
+<!--        <p>No images attached.</p>-->
+<%# end %>
+<!--      <header class="mb-3">-->
+<!--        <h2 class="font-bold text-black"><%#= product.title %></h2>-->
+<!--      </header>-->
+<!--    </div>-->
+<!--  </div>-->
+<div class="flex flex-wrap gap-4">
+  <% @products.each do |product| %>
+    <div class="w-full md:w-1/5">
+      <% if product.images.attached? %>
+        <% product.images.each do |image| %>
+          <figure>
+            <%= image_tag image, class: 'rounded-t-lg w-full h-64 object-cover' if image %>
+          </figure>
+        <% end %>
+      <% else %>
+        <p>No images attached.</p>
+      <% end %>
+      <header class="mt-2">
+        <h2 class="font-bold text-black"><%= product.title %></h2>
+      </header>
+    </div>
+  <% end %>
+</div>
+
+
+<!--  <div class="product-item">-->
+<!--    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg">-->
+<!--      <div>-->
+<%# if product.images.attached? %>
+<%# product.images.each do |image| %>
+<!--            <figure>-->
+<%#= image_tag image, class: 'rounded-t-lg w-full h-64' if image %>
+<!--            </figure>-->
+<%# end %>
+<%# else %>
+<!--          <p>No images attached.</p>-->
+<%# end %>
+<!--      </div>-->
+<!--      <section class="p-5">-->
+<!--        <header class="mb-3">-->
+<!--          <h2 class="font-bold text-black"><%#= product.title %></h2>-->
+<!--        </header>-->
+<!--        <div class="flex flex-wrap mb-3">-->
+<!--          <div class="w-full pr-4 mb-2">-->
+<!--            <p class="text-black"><%#= product.description %></p>-->
+<!--          </div>-->
+<!--          <div class="w-1/2 pr-4">-->
+<!--            <strong class="font-bold text-black">Price:</strong>-->
+<!--            <p class="text-black"><%#= number_to_currency(product.price) %></p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="flex justify-between mt-8 space-x-4">-->
+<%#= link_to "View", store_product_path(product), class: "rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+<!--        </div>-->
+<!--      </section>-->
+<!--    </div>-->
+<!--  </div>-->
+
+

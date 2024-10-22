@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'store', to: 'store#index', as: 'store_index' # Página principal de la tienda
+  get 'store/:id', to: 'store#show', as: 'store_product' # Página de detalles del producto
 
   root 'pages#home'
   devise_for :users

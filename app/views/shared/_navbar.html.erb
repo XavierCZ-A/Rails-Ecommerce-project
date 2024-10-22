@@ -1,7 +1,7 @@
 <nav class="bg-white border border-gray-200 shadow-sm">
   <div class="container mx-auto px-4 flex justify-between items-center">
     <%= link_to products_path, class: "text-2xl font-bold text-sky-900" do %>
-      Merin
+      <%= current_user.full_name %>
     <% end %>
 
     <button data-action="click->menu#toggle" class="sm:hidden">

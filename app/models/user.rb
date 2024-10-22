@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :products, dependent: :destroy
+
   enum role: [:customer, :seller]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
