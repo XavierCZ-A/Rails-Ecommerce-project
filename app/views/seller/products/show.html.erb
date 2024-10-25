@@ -8,7 +8,7 @@
     <%= render partial: 'view_product', locals: { product: @product } %>
 
     <div class="flex flex-wrap justify-between">
-      <%= link_to "Back to products", products_path, class: "text-center rounded-lg py-3 px-5 bg-indigo-600 inline-block font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600" %>
+      <%#= link_to "Back to products", products_path, class: "text-center rounded-lg py-3 px-5 bg-indigo-600 inline-block font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600" %>
       <%= button_to "Destroy this product", @product, method: :delete, class: "text-center rounded-lg py-3 px-5 bg-indigo-600 inline-block font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600" %>
     </div>
   </div>

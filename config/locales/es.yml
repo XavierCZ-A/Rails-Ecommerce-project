@@ -33,12 +33,15 @@ es:
       full_name: 'Nombre completo'
       password_characters: 'Caracteres minimo'
       already_have_an_account: 'Ya tienes una cuenta'
+
   activerecord:
-    enums:
-      payment_request:
-        type_request:
-          payment_to_supplier: 'Pago a proveedor'
-          account_advance: 'Adelanto de cuenta'
+    attributes:
+      product:
+        statuses:
+          pending_review: "Pendiente de revisión"
+          published: "Publicado"
+          rejected: "Archivado"
+          approved: "Aprobado"
     errors:
       models:
         product:
@@ -52,7 +55,8 @@ es:
               blank: 'No puede estar en blanco'
             price:
               blank: 'No puede estar en blanco'
-              not_a_number: 'Tiene que ser un numero'
+              not_a_number: 'Debe ser un número'
+              not_an_integer: 'Debe ser un número entero'
             stock:
               blank: 'No puede estar en blanco'
             category_id:
@@ -64,7 +68,13 @@ es:
               required: 'Debes seleccionar un producto'
             quantity:
               greater_than: 'Debe ser mayor a 0'
-              not_a_number: 'Debe ser un numero'
+              not_a_number: 'Debe ser un número'
+  errors:
+    messages:
+      not_an_integer: 'Debe ser un número entero'
+      not_a_number: 'Debe ser un número'
+
+
   views:
     product:
       products: 'Productos'
@@ -72,10 +82,14 @@ es:
       title: 'Titulo'
       category: 'Categoria'
       price: 'Precio'
+      action: 'Accion'
+      status: 'Estatus'
+
     stock:
       stocks: 'Conteo'
       quantity: 'Cantidad'
       product: 'Producto'
+
     orders:
       orders: 'Ordenes'
       customer_email: 'Correo'

@@ -3,7 +3,6 @@ class Seller::ProductsController < SellerController
 
   # GET /seller/products or /seller/products.json
   def index
-    # @pagy, @products = pagy(current_user.products)
     @pagy, @products = pagy(FindProductsSellers.new(current_user).call_params(products_params_index))
 
     # if params[:category_id]

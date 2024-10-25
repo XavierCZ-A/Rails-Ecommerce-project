@@ -34,11 +34,14 @@ en:
       already_have_an_account: 'Already have an account'
 
   activerecord:
-    enums:
-      payment_request:
-        type_request:
-          payment_to_supplier: 'Payment to supplier'
-          account_advance: 'Account'
+    attributes:
+      product:
+        statuses:
+          pending_review: "Pending review"
+          published: "Published"
+          rejected: "Rejected"
+          approved: "Approved"
+
     errors:
       models:
         product:
@@ -70,6 +73,9 @@ en:
       title: 'Title'
       category: 'Category'
       price: 'Price'
+      action: 'Action'
+      status: 'Status'
+
     stock:
       stocks: 'Stocks'
       quantity: 'Quantity'

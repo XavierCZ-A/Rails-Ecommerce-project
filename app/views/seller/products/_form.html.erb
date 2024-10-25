@@ -1,6 +1,6 @@
 <div class="max-w-2xl bg-white shadow-md rounded-lg border px-8 pt-6 pb-8 mb-4">
   <% if product.errors.any? %>
-    <div id="error_explanation" class="bg-red-100 text-red-700 px-3 py-2 font-medium rounded-lg mt-3 border border-red-400">
+    <div id="error_explanation" class="bg-red-100 text-red-700 px-3 py-2 font-medium rounded-lg mt-3 mb-5 border border-red-400">
       <h2 class="text-red-800"><%= t('activerecord.errors.models.product.save_error') %></h2>
       <ul class="mt-2">
         <% product.errors.each do |error| %>
